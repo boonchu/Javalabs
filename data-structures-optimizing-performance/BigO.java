@@ -1,3 +1,12 @@
+// BigO.java
+// foundations of asymptotic analysis
+// :
+// : Work through a concept challenge on finding tight asymptotic bounds for functions
+// :
+// : O(n) = n**2 - 10000 => O(n^2) (not fit to tight bounds)
+// : O(n^2) = n + n(log)n) => O(n*log(n)) (not fit to tight bounds)
+// : O(log2(n) = log10(n) => log10(n) = log2(n)/log2(10) = log2(n) => O(log2(n))
+// :
 public class BigO
 {
 
@@ -5,7 +14,7 @@ public class BigO
   {
     // O(1)
     int max = 0;
-    // O(N): the nested loop looks for the maximum
+    // O(n^2): the nested loop looks for the maximum
     // value between two array elements. The biggest
     // difference will be between 1 and 8
     for (int i=0; i <vals.length; i++) {
@@ -15,6 +24,7 @@ public class BigO
             }
         }
     }
+    // O(1)
     return max;
   } 
 
@@ -22,7 +32,7 @@ public class BigO
   {
     // O(1)
     int minIndex = 0;
-    // O(N) : find the smallest value from array
+    // O(n) : find the smallest value from array
     for (int i=0; i <vals.length; i++) {
         if (vals[i] < vals[minIndex]) {
             minIndex = i;
@@ -31,7 +41,7 @@ public class BigO
 
     // O(1)
     int minVal = vals[minIndex];
-    // O(N) : reduce with minimal value 
+    // O(n) : reduce with minimal value 
     for (int i=0; i <vals.length; i++) {
         vals[i] = vals[i] - minVal;
     }
